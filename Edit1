@@ -1,0 +1,39 @@
+docker-compose run --rm vendor/bin/codecept run ../devops-api/tests/acceptance -g LoginCest
+
+docker-compose run --rm codecept.phar run ../devops-api/tests/acceptance -g LoginCest
+
+php vendor/bin/codecept run
+
+php vendor/bin/codecept run ../devops-api/tests/acceptance --steps -g LoginCest
+
+php vendor/bin/codecept run ../devops-api/tests/acceptance --steps -g LoginCest
+version: '3.4'
+
+services:
+    codecept:
+        image: codeception/codeception
+        depends_on:
+            - chrome
+            - web
+        # links:
+        #     - chrome
+        #     - web
+        volumes:
+            - .:/project
+    web:
+        build:
+            context: .
+            target: base
+        environment:
+            XDEBUG_CONFIG: client_host=${XDEBUG_REMOTE_HOST:-host.docker.internal}
+            PHP_IDE_CONFIG: serverName=${XDEBUG_SERVER_NAME:-devops-api}
+        volumes:
+            - .:/app
+
+        selenium:
+            # for headles
+            #   image: 'seleniarm/standalone-chromium'
+            # for Chrome
+            image: selenium/standalone-chrome
+            ports:
+                - 4444:4444

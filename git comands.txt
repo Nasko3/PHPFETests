@@ -1,0 +1,99 @@
+To create new branch:
+
+git checkout master
+git pull origin master
+git checkout -b <name>
+
+tests-WEB-8392-FixLocators
+
+WEB-8392-pentest  --> Bootstrap
+
+https://stash.pros.com/projects/VAYANT/repos/web-admin/pull-requests?create&sourceBranch=refs/heads/tests-WEB-7907
+COMMIT
+1:Check status -> git status 
+2: all red files should be add -> git add <filePath_Name>
+3: check for red files -> git status
+4: commit if no red -> git commit -m '<MESSAGE>'
+5: push ->  git push origin <MY_Branch>
+
+Delete local branch:
+git branch -d <local-branch>
+
+To add at gitignor:
+git checkout -- <<filePath_Name>>
+
+To remove all uncomited (untracked) changes:
+git clean -fd <PATH>
+git clean -fd
+git clean -fx
+
+
+==========================================================
+git rollback last cammit -> git reset --hard HEAD~1
+==========================================================
+To resove the conflict
+1. git pull origin release-21.2.3 (пулваш текущия рилииз бранча) - ще дойдат много неща не се шашкай 
+2. fix (оправяш конфликтите и къмитваш)
+3. git status
+4. git add <file1> <file2> ...
+5. git commit.....
+6. git push origin <my_branch> (пушваш резултата)
+
+
+
+
+
+https://stash.pros.com/projects/VAYANT/repos/web-admin/pull-requests?create&sourceBranch=refs/heads/tests-WEB-8000-ServiceWarningMechanism
+
+
+Moliv07!
+url: http://gn11/alms/unitrunner_pgeorgieva_2021_07_23_12_36_29313358/adminui-debug-7512-fc5e0007f/adminui/public/
+adminui-debug-5203-1fca6168c.tar.gz
+
+
+======================================================================================================================================
+Renaming Git Branch
+Follow the steps below to rename a Local and Remote Git Branch:
+1. Start by switching to the local branch which you want to rename:
+git checkout <old_name>
+2. Rename the local branch by typing:
+git branch -m <new_name>
+At this point, you have renamed the local branch.
+
+If you’ve already pushed the <old_name> branch to the remote repository, perform the next steps to rename the remote branch.
+1. Push the <new_name> local branch and reset the upstream branch:
+git push origin -u <new_name>
+2. Delete the <old_name> remote branch:
+git push origin --delete <old_name>
+That’s it. You have successfully renamed the local and remote Git branch.
+
+
+z5xCn!mcA4vq25t
+
+ssh://git@sof-stash03.prosrm.com:7999/stash/vayant/web-merchandising.git
+
+
+При промени в сташа:
+  pgeorgieva@gridnode11  $;git pull
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:EKiq20XezHCPSIl4PjzBZNT7MysaYW5OTOuYi2MxRBo.
+Please contact your system administrator.
+Add correct host key in /home/pgeorgieva/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /home/pgeorgieva/.ssh/known_hosts:3
+RSA host key for [sof-stash03.prosrm.com]:7999 has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+vim /home/pgeorgieva/.ssh/known_hosts
+Навигирай го реда с stash3.....
+komanda: dd
+komanfa: :x
